@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+  <definition name="base" template="/WEB-INF/views/layout/page.jsp">
+    <put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+  </definition>
+  
+  <definition name="home" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+  </definition>
+
+  <definition name="registerForm" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/registerForm.jsp" />
+  </definition>
+
+  <definition name="profile" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/profile.jsp" />
+  </definition>
+
+  <definition name="messages" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/messages.jsp" />
+  </definition>
+
+  <definition name="message" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/message.jsp" />
+  </definition>
+  
+  <definition name="ebay" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/ebay.jsp" />
+  </definition>
+  
+  <definition name="imageUpload" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/imageUpload.jsp" />
+  </definition>
+  
+  <definition name="errors:duplicate" template="/WEB-INF/views/errors/duplicate.jsp">
+    <put-attribute name="body" value="/WEB-INF/views/errors/duplicate.jsp" />
+  </definition>
+
+  <definition name="errors:MessageNotFound" template="/WEB-INF/views/errors/MessageNotFound.jsp">
+    <put-attribute name="body" value="/WEB-INF/views/errors/MessageNotFound.jsp" />
+  </definition>
+  
+  <definition name="errors:accessdenied" template="/WEB-INF/views/errors/accessdenied.jsp">
+    <put-attribute name="body" value="/WEB-INF/views/errors/accessdenied.jsp" />
+  </definition>
+  
+  <definition name="login" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+  </definition>
+  
+  <definition name="websocket" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/websocket.jsp" />
+  </definition>
+
+<definition name="stompExample" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/stompExample.jsp" />
+  </definition>
+  
+<definition name="messagesfeed" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/messagesfeed.jsp" />
+  </definition>
+  
+  <definition name="mailpage" template="//WEB-INF/views/mailpage.jsp">
+    <put-attribute name="body" value="/WEB-INF/views/mailpage.jsp" />
+  </definition>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</tiles-definitions>
