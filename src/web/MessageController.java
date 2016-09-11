@@ -34,6 +34,10 @@ import stomp.MessageFeedService;
 @RequestMapping("/messages")
 public class MessageController {
 
+	public static final int DEFAULT_MESSAGES_PER_PAGE = 20;
+	private int messagesPerPage = DEFAULT_MESSAGES_PER_PAGE;
+	
+	
 	private MessagesRepository messagesRepository;
 	private static final String MAX_LONG_AS_STRING = "9223372036854775807";
 	
@@ -72,8 +76,10 @@ public class MessageController {
 	@RequestMapping(method=RequestMethod.GET)
 	public String messages(
 			@RequestParam(value="max", defaultValue=MAX_LONG_AS_STRING) long max, 
-			@RequestParam(value="count", defaultValue="20") int count, 
-			Model data){
+			@RequestParam(value="count"/*, defaultValue=this.getMessagesPerPage()*/, required=false) Integer count, 
+			Model data){ 
+		if(count == null) count = this.getMessagesPerPage();
+		
 		data.addAttribute("messageForm",new MessageForm());
 		data.addAttribute("messagesList",messagesRepository.findLastMessages(max, count));
 		return "messages";
@@ -112,5 +118,14 @@ public class MessageController {
 		messageFeedService.broadcastMessage(message);
 		
 		return "redirect:/messages";
+	}
+
+	public int getMessagesPerPage() {
+		return messagesPerPage;
+	}
+
+	public void setMessagesPerPage(int messagesPerPage) {
+		this.messagesPerPage = messagesPerPage;
+		
 	}
 }

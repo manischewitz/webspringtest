@@ -36,7 +36,18 @@ import jms.JMSMessagesImpl;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"web","db","rmi","jaxws","restcontrollers","jms","alert","websocket","stomp","email"})
+@ComponentScan({
+	"web",
+	"db",
+	"rmi",
+	"jaxws",
+	"restcontrollers",
+	"jms",
+	"alert",
+	"websocket",
+	"stomp",
+	"email",
+	"mbeans"})
 
 public class WebConfig extends WebMvcConfigurerAdapter{
 
